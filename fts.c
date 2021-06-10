@@ -548,7 +548,7 @@ name:		t = sp->fts_path + NAPPEND(p->fts_parent);
  */
 /* ARGSUSED */
 int
-fts_set(FTS *sp, FTSENT *p, int instr)
+fts_set(FTS *sp __attribute__((unused)), FTSENT *p, int instr)
 {
 
 	_DIAGASSERT(sp != NULL);
