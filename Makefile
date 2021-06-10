@@ -6,7 +6,7 @@ PREFIX  ?= /usr/local
 BINDIR  ?= $(PREFIX)/bin
 INCDIR  ?= $(PREFIX)/include
 LIBDIR  ?= $(PREFIX)/lib
-MANDIR  ?= $(DATADIR)/man/man1
+MANDIR  ?= $(PREFIX)/share/man/man3
 EXTRA_CFLAGS = -I. -Wall -Wextra -fPIC
 
 OBJS = fts.o
@@ -48,3 +48,4 @@ install: $(SLIB) $(DLIB)
 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SOBASE)
 	install -D -m 644 fts.h $(DESTDIR)$(INCDIR)/fts.h
 	install -D -m 644 musl-fts.pc $(DESTDIR)$(LIBDIR)/pkgconfig/musl-fts.pc
+	install -D -m 644 fts.3 $(DESTDIR)$(MANDIR)/fts.3
