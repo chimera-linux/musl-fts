@@ -42,10 +42,12 @@ clean:
 	rm -f $(OBJS) $(SLIB) $(DLIB) musl-fts.pc
 
 install: $(SLIB) $(DLIB)
-	install -D -m 755 $(DLIB) $(DESTDIR)$(LIBDIR)/$(DLIB)
-	install -D -m 644 $(SLIB) $(DESTDIR)$(LIBDIR)/$(SLIB)
+	install -d $(DESTDIR)$(LIBDIR)
+	install -m 755 $(DLIB) $(DESTDIR)$(LIBDIR)/$(DLIB)
+	install -m 644 $(SLIB) $(DESTDIR)$(LIBDIR)/$(SLIB)
 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SONAME)
 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SOBASE)
-	install -D -m 644 fts.h $(DESTDIR)$(INCDIR)/fts.h
-	install -D -m 644 musl-fts.pc $(DESTDIR)$(LIBDIR)/pkgconfig/musl-fts.pc
-	install -D -m 644 fts.3 $(DESTDIR)$(MANDIR)/fts.3
+	install -d $(DESTDIR)$(INCDIR)
+	install -m 644 fts.h $(DESTDIR)$(INCDIR)/fts.h
+	install -m 644 musl-fts.pc $(DESTDIR)$(LIBDIR)/pkgconfig/musl-fts.pc
+	install -m 644 fts.3 $(DESTDIR)$(MANDIR)/fts.3
