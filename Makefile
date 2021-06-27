@@ -49,5 +49,7 @@ install: $(SLIB) $(DLIB)
 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SOBASE)
 	install -d $(DESTDIR)$(INCDIR)
 	install -m 644 fts.h $(DESTDIR)$(INCDIR)/fts.h
+	install -d $(DESTDIR)$(LIBDIR)/pkgconfig
 	install -m 644 musl-fts.pc $(DESTDIR)$(LIBDIR)/pkgconfig/musl-fts.pc
+	install -d $(DESTDIR)$(MANDIR)
 	install -m 644 fts.3 $(DESTDIR)$(MANDIR)/fts.3
