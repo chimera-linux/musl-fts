@@ -23,4 +23,5 @@ musl-fts.pc
 stamp-h1
 .libs/
 m4/
-
+*.so
+*.o
